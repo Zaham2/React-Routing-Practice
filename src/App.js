@@ -65,22 +65,19 @@ const InnerNavigate = () => {
 
 
 
-const Filler = (props) => {
+// For testing purposes only
+const Filler = (props) => {  
   console.log(useLocation());
   return (
     <div>
       <h3>Filler {props.text}</h3>
       <Dummy text='d3' />
       <Main text='m5' />
-        <MemoryRouter basename='/two'>
+        <MemoryRouter basename='/two'>  
           <Routes>
-            {console.log('zebala1')}
             <Route index element={<InnerNavigate text={'main 4'}/>} />
-            {console.log('zebala2')}
             <Route path='/seven' element={<Main text='main 2' />}/>
-            {console.log('zebala3')}
             <Route path="*" element={<NotFound text='not found 3' />} />
-            {console.log('zebala4')}
           </Routes>
         </MemoryRouter>
     </div>
